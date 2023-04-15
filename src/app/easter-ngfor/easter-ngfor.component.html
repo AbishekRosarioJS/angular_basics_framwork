@@ -1,0 +1,39 @@
+<h4>{{title}}</h4>
+<ul>
+    <li *ngFor="let cinema of movies">
+        {{cinema.title}} --{{cinema.director}} --{{cinema.year}}
+    </li>
+</ul>
+
+<br>
+<h3>table view</h3>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+     {{title}}
+    </div> 
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>s.no</th>
+                        <th>Title</th>
+                        <th>Director</th>
+                        <th>Year</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cinema of movies;let i=index; let  e= even; let o= odd;" [ngClass]="{'bg-danger':o,'bg-success':e}">
+                        <td>{{i+1}}</td>
+                        <td>{{cinema.title}}</td>
+                        <td>{{cinema.director}}</td>
+                        <td>{{cinema.year}}</td>
+                        <td>{{cinema.rating}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
